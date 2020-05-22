@@ -28,7 +28,17 @@ body{
   padding: 10px;
 }
 
-.amount{
+.interest{
+  font-size: 30px;
+  color: red;
+}
+
+.loan{
+  font-size: 30px;
+  color: red;
+}
+
+.principle{
   font-size: 30px;
   color: red;
 }
@@ -60,12 +70,16 @@ body{
 .myfield{
   width: 100%;
   padding:10px;
-  background-color: lightgray;
+  background-color: none;
+  border-bottom: 1px solid dodgerblue;
   color: dodgerblue;
   text-align: center;
   font-weight: bolder;
   font-size: 20px;
-  border:none;
+  border-left:none;
+  border-right: none;
+  border-top: none;
+  outline: none;
 }
 
 .mybtn{
