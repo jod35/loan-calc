@@ -1,0 +1,94 @@
+*{
+  font-family: sans-serif;
+}
+body{
+  margin:0;
+  padding:0;
+  color: dodgerblue;
+}
+.result{
+  height: 150px;
+  color: rgb(5, 150, 5);
+  background-color: rgb(245, 233, 233);
+  width: 100%;
+  margin:auto;
+  border-radius: 7px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  /* box-shadow: 5px 5px 15px 5px black; */
+
+}
+#principle-display{
+   height: 30%;
+   padding: 20px;
+}
+#loan{
+  height: 30%;
+  padding: 20px;
+}
+
+.amount{
+  font-size: 50px;
+  color: red;
+}
+#interest{
+  height: 30%;
+  padding: 20px;
+}
+.calculator{
+  height: 80vh;
+  /* background: black; */
+
+}
+.text-center{
+  text-align: center;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+.form{
+  width: 80%;
+  box-shadow: 5px 5px 15px 5px darkslategray;
+  margin:auto;
+  text-align: center;
+  padding:30px;
+  border:5px solid dodgerblue;
+}
+.form-group{
+  padding:10px;
+}
+.myfield{
+  width: 100%;
+  padding:10px;
+  background-color: lightgray;
+  color: dodgerblue;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 20px;
+  border:none;
+}
+
+.mybtn{
+  padding:20px;
+  border:none;
+  cursor: pointer;
+  background-color: dodgerblue;
+  color: white;
+  font-weight:bold;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-radius: 7px;
+}
+
+.clear{
+  padding:20px;
+  border:none;
+  cursor: pointer;
+  background-color: green;
+  color: white;
+  font-weight:bold;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-radius: 7px;
+  text-decoration: none;
+}
