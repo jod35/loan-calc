@@ -70,11 +70,10 @@ function calculateTheLoan(e){
         loan_display.removeChild(loan_amount);
         principle_display.removeChild(principle_amount);
         interest_display.removeChild(interest_rate);
-        principle=0;
-        rate=0;
-        time=0;
 
-        simple_interest=0;
+        
+
+        window.location.reload(true);
     
     }
 
