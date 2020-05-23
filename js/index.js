@@ -46,31 +46,34 @@ function calculateTheLoan(e){
     
     simple_interest=parseInt(principle * (rate/100) * (time/12));
 
-    amount =parseInt(simple_interest +principle);
+    amount =parseInt(simple_interest) +parseInt(principle);
     
-    interest_display.innerHTML+`<br> 
-                    <div class="amount">${simple_interest} </div>`; 
+    interest_display.innerHTML+=`
+                    <div class="interest">${simple_interest} </div>`; 
 
-    loan_display.innerHTML+`<br> 
-                    <div class="amount">${amount} </div>`; 
+    loan_display.innerHTML+=`
+                    <div class="loan">${amount} </div>`; 
 
-    principle_display.innerHTML+=`<br> 
-                    <div class="amount">${principle} </div>`; 
+    principle_display.innerHTML+=`
+                    <div class="principle">${principle} </div>`; 
     
     
     
     clear_button.addEventListener('click',ResetAll);
 
     function ResetAll(){
-        const amount=document.querySelectorAll('.amount');
-        for(var i=0; i<amount.length; i++){
-            amount[i].style.display="none";
-        }
-        principle=0;
-        rate=0;
-        time=0;
+        let loan_amount=document.querySelector('.loan');
+        let principle_amount=document.querySelector('.principle');
+        let interest_rate=document.querySelector('.interest');
 
-        simple_interest=0;
+    
+        loan_display.removeChild(loan_amount);
+        principle_display.removeChild(principle_amount);
+        interest_display.removeChild(interest_rate);
+
+        
+
+        window.location.reload(true);
     
     }
 

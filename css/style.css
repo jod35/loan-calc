@@ -1,5 +1,5 @@
 *{
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 body{
   margin:0;
@@ -9,7 +9,7 @@ body{
 .result{
   height: 150px;
   color: rgb(5, 150, 5);
-  background-color: rgb(245, 233, 233);
+  background-color: ;
   width: 100%;
   margin:auto;
   border-radius: 7px;
@@ -28,7 +28,17 @@ body{
   padding: 10px;
 }
 
-.amount{
+.interest{
+  font-size: 30px;
+  color: red;
+}
+
+.loan{
+  font-size: 30px;
+  color: red;
+}
+
+.principle{
   font-size: 30px;
   color: red;
 }
@@ -58,14 +68,18 @@ body{
   padding:10px;
 }
 .myfield{
-  width: 100%;
+  width: 95%;
   padding:10px;
-  background-color: lightgray;
+  background-color: none;
+  border-bottom: 1px solid dodgerblue;
   color: dodgerblue;
   text-align: center;
   font-weight: bolder;
   font-size: 20px;
-  border:none;
+  border-left:none;
+  border-right: none;
+  border-top: none;
+  outline: none;
 }
 
 .mybtn{
