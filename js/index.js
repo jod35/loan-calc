@@ -19,6 +19,7 @@ const interest_display=document.querySelector('#interest');
 const principle_display=document.querySelector('#principle-display');
 // principle_display.innerHTML="Principle: ";
 
+const monthly_display=document.querySelector('#per-month');
 
 calculator_form.addEventListener('submit',calculateTheLoan);
 
@@ -47,6 +48,9 @@ function calculateTheLoan(e){
     simple_interest=parseInt(principle * (rate/100) * (time/12));
 
     amount =parseInt(simple_interest) +parseInt(principle);
+
+
+    monthly_payment=parseInt(amount / 12);
     
     interest_display.innerHTML+=`
                     <div class="interest">${simple_interest} </div>`; 
@@ -57,7 +61,37 @@ function calculateTheLoan(e){
     principle_display.innerHTML+=`
                     <div class="principle">${principle} </div>`; 
     
+
+    monthly_display.innerHTML+=`
+                    <div class="principle">${monthly_payment} </div>`;
+
+    //create a new object to be stored
+
+    today= new Date();
+
+
+    let new_record={
+        'date':`${today.getDate()} ,${today.getHours()}:${today.getMinutes()}`,
+        'principle':principle,
+        'rate':rate,
+        'time':time,
+        
+    }
     
+    
+    
+    if (localStorage.getItem('records')==null){
+        let records=[];
+        records.push(new_record);
+        localStorage.setItem('records',JSON.stringify(records));
+        alert("Record Saved");
+    }
+
+    else{
+        console.log("Hello");
+        
+        
+    }
     
     clear_button.addEventListener('click',ResetAll);
 
