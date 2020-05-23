@@ -74,6 +74,7 @@ function calculateTheLoan(e){
         
 
         window.location.reload(true);
+        
     
     }
 
