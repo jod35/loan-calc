@@ -4,25 +4,43 @@ const result_display=document.querySelector('#result');
 
 const clear_button=document.querySelector('#clear_button');
 
-
-
+const table_body=document.querySelector('#table-body');
 
 const calculate_button=document.querySelector('#calc_button');
 
 const loan_display=document.querySelector('#loan');
-// loan_display.innerHTML="loan Amount: ";
 
 const interest_display=document.querySelector('#interest');
-// interest_display.innerHTML="Interest: ";
-// result_display.innerHTML="hello";
 
 const principle_display=document.querySelector('#principle-display');
-// principle_display.innerHTML="Principle: ";
+
 
 const monthly_display=document.querySelector('#per-month');
 
 calculator_form.addEventListener('submit',calculateTheLoan);
 
+
+//load window
+
+window.onload=function retrieveData(){
+    calc_records=JSON.parse(localStorage.getItem('records'));
+
+    
+
+    for(let i of calc_records){
+        table_body.innerHTML+=`<tr>
+                                    <td>${i.date}</td>
+                                    <td>${i.principle}</td>
+                                    <td>${i.rate}</td>
+                                    <td>${i.time}</td>
+                                </tr>`
+        
+    }
+    
+    
+}
+
+//calculate the loan
 function calculateTheLoan(e){
 
     let principle=document.querySelector('#principle').value;
@@ -30,11 +48,6 @@ function calculateTheLoan(e){
     let rate=document.querySelector('#rate').value;
 
     let time=document.querySelector('#time').value;
-
-    console.log(principle);
-    console.log(time);
-    console.log(rate);
-
 
     if (principle< 1000){
         alert("We lend more than 1000");
@@ -69,9 +82,10 @@ function calculateTheLoan(e){
 
     today= new Date();
 
-
+    console.log(today.getFullYear());
+    
     let new_record={
-        'date':`${today.getDate()} ,${today.getHours()}:${today.getMinutes()}`,
+        'date':`${today.getDay()}/${today.getDate()}/${today.getFullYear()} ,${today.getHours()}:${today.getMinutes()}`,
         'principle':principle,
         'rate':rate,
         'time':time,
@@ -84,13 +98,17 @@ function calculateTheLoan(e){
         let records=[];
         records.push(new_record);
         localStorage.setItem('records',JSON.stringify(records));
-        alert("Record Saved");
+        // alert("Record Saved");
     }
 
     else{
-        console.log("Hello");
-        
-        
+        let records=JSON.parse(localStorage.getItem('records'));
+
+        records.push(new_record);
+
+        //reset the storage
+
+        localStorage.setItem('records',JSON.stringify(records));
     }
     
     clear_button.addEventListener('click',ResetAll);
@@ -111,6 +129,8 @@ function calculateTheLoan(e){
         
     
     }
+
+
 
 
     
