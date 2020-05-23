@@ -21,20 +21,20 @@ body{
 }
 #principle-display{
    height: 30%;
-   padding: 20px;
+   padding: 10px;
 }
 #loan{
   height: 30%;
-  padding: 20px;
+  padding: 10px;
 }
 
 .amount{
-  font-size: 50px;
+  font-size: 30px;
   color: red;
 }
 #interest{
   height: 30%;
-  padding: 20px;
+  padding: 10px;
 }
 .calculator{
   height: 80vh;
